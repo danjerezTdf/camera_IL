@@ -9,8 +9,8 @@ const VideoPlayer = () => {
   useEffect(() => {
     const fetchAccessToken = async () => {
       try {
-        const response = await axios.get('/lechange/accessToken'); // Cambia la ruta si es necesario
-        setAccessToken(response.data.accessToken); // Asegúrate de que el nombre del accessToken sea el correcto en la respuesta de la API
+        const response = await axios.get('http://localhost:5000/lechange/accessToken'); // ruta endpoint 
+        setAccessToken(response.data.accessToken); 
       } catch (error) {
         setError('Error al obtener el accessToken _');
       }

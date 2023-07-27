@@ -7,8 +7,8 @@ export class LechangeController {
   @Get('accessToken')
   async getAccessToken(): Promise<any> {
     const url = 'https://openapi.lechange.cn:443/openapi/accessToken';
-    const appId = '*********'; // Reemplaza con tu appId
-    const appSecret = '************'; // Reemplaza con tu appSecret
+    const appId = 'lc38501ea51a9f4799'; //  appId
+    const appSecret = '************'; //  appSecret
 
     // Obtener el tiempo UTC actual
     const time = Math.floor(new Date().getTime() / 1000);
@@ -29,7 +29,7 @@ export class LechangeController {
         time,
         nonce,
       },
-      params: {}, // Puedes añadir parámetros de solicitud aquí si es necesario
+      params: {}, // parámetros de solicitud si es necesario
       id: '88',
     };
 
