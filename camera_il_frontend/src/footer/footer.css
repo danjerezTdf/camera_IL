@@ -1,0 +1,14 @@
+.footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alineación del texto al centro */
+    padding: 30px; /* Espaciado interno */
+
+  }
+  
+  .footer p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 50px;
+  }
+  

@@ -1,23 +1,14 @@
-/* styles.css (o cualquier otro archivo CSS que estés utilizando) */
+.centered-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 50vh; /* Altura del viewport */
+}
 
-/* Estilos para el contenedor del reproductor de video */
 .video-player-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Estilos para el video */
-  video {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilos para mensajes de error */
-  .error-message {
-    color: red;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
+  /* Estilos para tu contenedor de video */
+}
+
+.video-player {
+  /* Estilos para tu reproductor de video */
+}

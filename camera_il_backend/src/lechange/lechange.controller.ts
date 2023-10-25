@@ -1,5 +1,4 @@
 import { Controller, Get } from '@nestjs/common';
-import axios from 'axios';
 import * as crypto from 'crypto';
 
 @Controller('lechange')
@@ -7,8 +6,8 @@ export class LechangeController {
   @Get('accessToken')
   async getAccessToken(): Promise<any> {
     const url = 'https://openapi.lechange.cn:443/openapi/accessToken';
-    const appId = 'lc38501ea51a9f4799'; //  appId
-    const appSecret = '************'; //  appSecret
+    const appId = 'lc938a8730c6154020'; //  appId
+    const appSecret = '21b2f7c92e624c2c964081ca671832'; //  appSecret
 
     // Obtener el tiempo UTC actual
     const time = Math.floor(new Date().getTime() / 1000);
@@ -34,10 +33,23 @@ export class LechangeController {
     };
 
     try {
-      const response = await axios.post(url, data);
-      return response.data;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al obtener el accessToken');
+      }
+
+      const responseData = await response.json();
+      return responseData;
     } catch (error) {
       throw new Error('Error al obtener el accessToken');
     }
   }
 }
+

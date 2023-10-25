@@ -1,40 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import './videoplayer.css';
-import axios from 'axios';
+import React from 'react';
+import ReactPlayer from 'react-player';
+import './VideoPlayer.css'; // Asegúrate de importar el archivo de estilos CSS
 
 const VideoPlayer = () => {
-  const [accessToken, setAccessToken] = useState('');
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const fetchAccessToken = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/lechange/accessToken'); // ruta endpoint 
-        setAccessToken(response.data.accessToken); 
-      } catch (error) {
-        setError('Error al obtener el accessToken _');
-      }
-    };
-
-    fetchAccessToken();
-  }, []);
+  const videoURL =
+    'https://cmgw-online-fk.easy4ipcloud.com:8890/LCO/9E06092PBVAC6A8/0/1/20230727T224615/f6ac0757e6b49cadc798c5884b727ddd.m3u8?proto=https';
 
   return (
-    <div>
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        accessToken && (
-          <video controls>
-            <source
-              src={`https://open.imoulife.com/video/live/${accessToken}`}
-              type="application/x-mpegURL"
-            />
-          </video>
-        )
-      )}
+    <div className="centered-container">
+      <div className="video-player-container">
+        {/* La clase 'inverted-video' se aplicará solo a la etiqueta <video> */}
+        <ReactPlayer url={videoURL} controls width="800px" playing={true} className="video-player" />
+      </div>
     </div>
   );
 };
 
 export default VideoPlayer;
+
