@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './AudioRecorder.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faStop, faPlay } from '@fortawesome/free-solid-svg-icons'; // Importa los íconos que desees utilizar
